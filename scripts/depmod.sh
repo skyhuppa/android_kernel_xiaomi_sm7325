@@ -10,11 +10,11 @@ fi
 DEPMOD=$1
 KERNELRELEASE=$2
 
-#if ! test -r System.map ; then
-#	echo "Warning: modules_install: missing 'System.map' file. Skipping depmod." >&2
-#	exit 0
-#fi
-#
+if ! test -r System.map ; then
+	echo "Warning: modules_install: missing 'System.map' file. Skipping depmod." >&2
+	exit 0
+fi
+
 # legacy behavior: "depmod" in /sbin, no /sbin in PATH
 PATH="$PATH:/sbin"
 if [ -z $(command -v $DEPMOD) ]; then
