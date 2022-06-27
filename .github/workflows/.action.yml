@@ -3,7 +3,7 @@ name: Kernel Builder
 on: 
   push:
     branches:
-      - /main
+      - kernel.lnx.5.4.r1-rel/main
 
   workflow_dispatch:
 
