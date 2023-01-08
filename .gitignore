@@ -155,6 +155,6 @@ arch/*/configs/vendor/*_defconfig
 arch/arm/boot/dts/vendor
 
 # AtomX dir & builder scripts
-AtomX.sh
+build.sh
 out/
 work/
