@@ -360,7 +360,7 @@ config PANIC_ON_SSR_NOTIF_TIMEOUT
 
 config MSM_PIL_SSR_GENERIC
 	tristate "MSM Subsystem Boot Support"
-	select MSM_SUBSYSTEM_RESTART
+	depends on MSM_SUBSYSTEM_RESTART
 	help
 	  Support for booting and shutting down MSM Subsystem processors.
 	  This driver also monitors the SMSM status bits and the watchdog
@@ -415,8 +415,8 @@ config QGKI_MSM_BOOT_TIME_MARKER
 
 config QCOM_QMI_HELPERS
 	tristate
-	depends on (ARCH_QCOM || COMPILE_TEST) && NET
-        select NET
+	depends on ARCH_QCOM || COMPILE_TEST
+	depends on NET
 
 source "drivers/soc/qcom/memshare/Kconfig"
 
@@ -646,7 +646,7 @@ config MINIDUMP_MAX_ENTRIES
 
 config QCOM_MICRODUMP
 	tristate "Qualcomm Technologies, Inc. Microdump Support"
-	select MSM_SUBSYSTEM_RESTART
+	depends on MSM_SUBSYSTEM_RESTART
 	depends on QCOM_SMEM
 	help
 	  This enables microdump feature. It collects
