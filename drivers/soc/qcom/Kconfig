@@ -416,8 +416,7 @@ config QGKI_MSM_BOOT_TIME_MARKER
 config QCOM_QMI_HELPERS
 	tristate
 	depends on (ARCH_QCOM || COMPILE_TEST) && NET
-
-	depends on NET
+        select NET
 
 source "drivers/soc/qcom/memshare/Kconfig"
 
