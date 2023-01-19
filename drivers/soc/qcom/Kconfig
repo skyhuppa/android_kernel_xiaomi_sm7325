@@ -296,7 +296,6 @@ config MSM_PIL
 config MSM_SUBSYSTEM_RESTART
 	tristate "MSM Subsystem Restart"
 	select MSM_PIL
-	select QCOM_QMI_HELPERS
 	help
 	  This option enables the MSM subsystem restart framework.
 
